@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LearnTrack – Dashboard</title>
+<title>LearnTrack – Quiz V/F</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -353,8 +353,8 @@ svg.chart { width: 100%; height: 120px; overflow: visible; }
 
 <nav class="screen-nav">
   <span>🎮 ESTUDIANTE</span>
-  <button class="screen-btn active" onclick="window.location='01-dashboard.html'">Dashboard</button>
-  <button class="screen-btn" onclick="window.location='02-quiz-vf.html'">Quiz V/F</button>
+  <button class="screen-btn" onclick="window.location='01-dashboard.html'">Dashboard</button>
+  <button class="screen-btn active" onclick="window.location='02-quiz-vf.html'">Quiz V/F</button>
   <button class="screen-btn" onclick="window.location='03-quiz-mc.html'">Quiz Opción Múltiple</button>
   <button class="screen-btn" onclick="window.location='04-flashcard-front.html'">Flashcard (Frente)</button>
   <button class="screen-btn" onclick="window.location='05-flashcard-back.html'">Flashcard (Reverso)</button>
@@ -367,134 +367,28 @@ svg.chart { width: 100%; height: 120px; overflow: visible; }
   <button class="screen-btn" onclick="window.location='12-comm-hub.html'">Comm Hub</button>
 </nav>
 
-<div class="shell screen active" id="screen-dashboard">
-  <!-- Navbar -->
+<div class="shell screen active" id="screen-quiz-vf">
   <nav class="navbar">
     <div class="nav-logo">LearnTrack</div>
-    <div class="nav-btn">🗺 Mis Rutas</div>
-    <div class="nav-btn">💬 Comunidad</div>
-    <div class="nav-btn">📖 The Codex</div>
-    <div class="nav-center">
-      <div class="streak">🔥 14</div>
-      <div class="xp-bar-wrap">
-        <div class="xp-label">LVL 12</div>
-        <div class="xp-bar"><div class="xp-fill" style="width:70%"></div></div>
-        <div class="xp-label" style="color:var(--text-mid);font-size:10px">3500/5000</div>
-      </div>
-    </div>
-    <div class="nav-right">
-      <div class="bell">🔔<div class="bell-dot"></div></div>
-      <div class="hero-avatar">JP</div>
-    </div>
+    <div class="nav-center"><div class="streak">🔥 14</div><div class="xp-bar-wrap"><div class="xp-label">LVL 12</div><div class="xp-bar"><div class="xp-fill" style="width:70%"></div></div></div></div>
+    <div class="nav-right"><div class="bell">🔔<div class="bell-dot"></div></div><div class="hero-avatar">JP</div></div>
   </nav>
-
   <div class="content">
-    <!-- Habit Tracker -->
-    <div class="glass-card" style="padding:16px 20px;margin-bottom:16px;">
-      <div style="font-size:11px;color:var(--text-soft);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;">Daily Ritual — Esta Semana</div>
-      <div class="hex-row">
-        <div class="hex hex-on"></div>
-        <div class="hex hex-on"></div>
-        <div class="hex hex-on"></div>
-        <div class="hex hex-on"></div>
-        <div class="hex hex-off">🌙</div>
-        <div class="hex hex-off">🌙</div>
-        <div class="hex hex-off">🌙</div>
+    <div class="bc">Variables / <span>Desafío Técnico</span></div>
+    <div class="quiz-wrap">
+      <div class="progress-top">
+        <div class="prog-bar"><div class="prog-fill" style="width:70%"></div></div>
+        <div class="prog-count">7 / 10</div>
       </div>
-    </div>
-
-    <div class="grid-2" style="margin-bottom:16px">
-      <!-- Active Quests -->
-      <div>
-        <div style="font-size:13px;font-weight:600;color:var(--text-mid);margin-bottom:10px;display:flex;align-items:center;gap:6px;">⚔️ Misiones de Clase</div>
-        <div class="grid-2" style="gap:12px">
-          <div class="quest-card quest-quiz quest-critical">
-            <div class="quest-icon">⚡</div>
-            <div class="quest-title">Quiz: Arreglos</div>
-            <div class="quest-sub">Variables / CC23</div>
-            <div class="quest-meta">
-              <div class="quest-time">⌛ 15 min · <span style="color:var(--neon-red);animation:blink 1s infinite">Vence HOY</span></div>
-              <div class="critical-tag">CRÍTICO</div>
-            </div>
-          </div>
-          <div class="quest-card quest-flash" style="border-color:var(--aqua)">
-            <div class="quest-icon">🃏</div>
-            <div class="quest-title">Flashcards: Punteros</div>
-            <div class="quest-sub">12 tarjetas · CC23</div>
-            <div class="quest-meta">
-              <div class="quest-time">⌛ 10 min · Mañana</div>
-            </div>
-          </div>
-          <div class="quest-card quest-feynman" style="border-color:var(--gold);grid-column:1/-1">
-            <div class="quest-icon">🧠</div>
-            <div class="quest-title">Feynman Canvas: Explicar Punteros</div>
-            <div class="quest-sub">Explica como si hablaras con un niño · CC23</div>
-            <div class="quest-meta">
-              <div class="quest-time">⌛ 20 min · En 2 días</div>
-            </div>
-          </div>
+      <div class="question-block">
+        <div style="font-size:11px;color:var(--lavender);font-weight:600;letter-spacing:.04em;margin-bottom:14px;">VERDADERO O FALSO</div>
+        <div class="question-text">¿Las variables locales en C++ mantienen su valor después de que la función donde fueron declaradas termina su ejecución?</div>
+        <div class="vf-buttons">
+          <button class="vf-btn vf-true" onclick="this.classList.toggle('sel')">✓ Verdadero</button>
+          <button class="vf-btn vf-false" onclick="this.classList.toggle('sel')">✗ Falso</button>
         </div>
       </div>
-
-      <!-- El Estratega + Timeline -->
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <!-- El Estratega -->
-        <div class="glass-card" style="padding:18px">
-          <div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:8px;">🤖 El Estratega — Plan Adaptativo</div>
-          <div style="font-size:13px;color:var(--text-mid);line-height:1.6;">Tu nivel en <b style="color:var(--text)">Arreglos</b> es del <span style="color:var(--neon-red);font-weight:700">45%</span>. Para alcanzar tu meta del <span style="color:var(--neon-green);font-weight:700">70%</span>, hoy te sugerimos:</div>
-          <div style="display:flex;gap:8px;margin-top:10px;">
-            <div style="background:rgba(139,124,246,.15);border:1px solid var(--lavender);border-radius:8px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--lavender);">1 Quiz de Refuerzo</div>
-            <div style="background:rgba(6,182,212,.1);border:1px solid var(--aqua);border-radius:8px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--aqua);">5 min Flashcards</div>
-          </div>
-        </div>
-
-        <!-- Mastery Timeline -->
-        <div class="glass-card" style="padding:16px">
-          <div style="font-size:12px;color:var(--text-soft);margin-bottom:6px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;">Mastery Timeline</div>
-          <svg class="chart" viewBox="0 0 400 100" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#8B7CF6"/>
-                <stop offset="100%" stop-color="#06B6D4"/>
-              </linearGradient>
-              <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#06B6D4" stop-opacity=".3"/>
-                <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <path d="M0,80 C50,75 80,50 120,45 S180,30 220,25 S290,35 320,20 S370,10 400,8" stroke="url(#lineGrad)" stroke-width="2.5" fill="none" filter="url(#blur)"/>
-            <path d="M0,80 C50,75 80,50 120,45 S180,30 220,25 S290,35 320,20 S370,10 400,8 L400,100 L0,100 Z" fill="url(#fillGrad)"/>
-            <circle cx="120" cy="45" r="5" fill="#8B7CF6"/>
-            <circle cx="220" cy="25" r="5" fill="#8B7CF6"/>
-            <circle cx="320" cy="20" r="5" fill="#06B6D4" style="filter:drop-shadow(0 0 4px #06B6D4)"/>
-          </svg>
-          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-soft);margin-top:4px;">
-            <span>Variables</span><span>Arreglos</span><span>Punteros</span>
-          </div>
-        </div>
-
-        <!-- Side Quests -->
-        <div class="glass-card" style="padding:14px">
-          <div style="font-size:11px;font-weight:700;color:var(--text-soft);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;">🧭 Side Quests — The Codex</div>
-          <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px">
-            <div style="background:rgba(71,85,105,.3);border:1px solid #475569;border-radius:12px;padding:10px 14px;flex-shrink:0;text-align:center;">
-              <div style="font-size:14px;margin-bottom:4px">🌐</div>
-              <div style="font-size:11px;font-weight:600;color:var(--text)">IA Básica</div>
-              <div style="font-size:9px;color:var(--lavender);margin-top:3px">Extra XP</div>
-            </div>
-            <div style="background:rgba(71,85,105,.3);border:1px solid #475569;border-radius:12px;padding:10px 14px;flex-shrink:0;text-align:center;">
-              <div style="font-size:14px;margin-bottom:4px">🌲</div>
-              <div style="font-size:11px;font-weight:600;color:var(--text)">Grafos Avanzados</div>
-              <div style="font-size:9px;color:var(--lavender);margin-top:3px">Extra XP</div>
-            </div>
-            <div style="background:rgba(71,85,105,.2);border:1px dashed #475569;border-radius:12px;padding:10px 14px;flex-shrink:0;text-align:center;opacity:.5;">
-              <div style="font-size:14px;margin-bottom:4px">🔒</div>
-              <div style="font-size:11px;font-weight:600;color:var(--text-soft)">Redes Neuronales</div>
-              <div style="font-size:9px;color:var(--text-soft);margin-top:3px">Próximamente</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <button class="next-btn" onclick="window.location='07-feedback-vf.html'">Confirmar Respuesta →</button>
     </div>
   </div>
 </div>
