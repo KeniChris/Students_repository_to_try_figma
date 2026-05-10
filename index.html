@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LearnTrack – Flashcard (Reverso)</title>
+<title>LearnTrack – Feynman Canvas</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -357,8 +357,8 @@ svg.chart { width: 100%; height: 120px; overflow: visible; }
   <button class="screen-btn" onclick="window.location='02-quiz-vf.html'">Quiz V/F</button>
   <button class="screen-btn" onclick="window.location='03-quiz-mc.html'">Quiz Opción Múltiple</button>
   <button class="screen-btn" onclick="window.location='04-flashcard-front.html'">Flashcard (Frente)</button>
-  <button class="screen-btn active" onclick="window.location='05-flashcard-back.html'">Flashcard (Reverso)</button>
-  <button class="screen-btn" onclick="window.location='06-feynman.html'">Feynman Canvas</button>
+  <button class="screen-btn" onclick="window.location='05-flashcard-back.html'">Flashcard (Reverso)</button>
+  <button class="screen-btn active" onclick="window.location='06-feynman.html'">Feynman Canvas</button>
   <button class="screen-btn" onclick="window.location='07-feedback-vf.html'">Feedback V/F</button>
   <button class="screen-btn" onclick="window.location='08-feedback-mc.html'">Feedback Quiz</button>
   <button class="screen-btn" onclick="window.location='09-feedback-feynman.html'">Feedback Feynman</button>
@@ -367,31 +367,38 @@ svg.chart { width: 100%; height: 120px; overflow: visible; }
   <button class="screen-btn" onclick="window.location='12-comm-hub.html'">Comm Hub</button>
 </nav>
 
-<div class="shell screen active" id="screen-flashcard-back">
+<div class="shell screen active" id="screen-feynman">
   <nav class="navbar">
     <div class="nav-logo">LearnTrack</div>
     <div class="nav-center"><div class="streak">🔥 14</div></div>
     <div class="nav-right"><div class="hero-avatar">JP</div></div>
   </nav>
-  <div class="content" style="display:flex;flex-direction:column;align-items:center;padding-top:40px;">
-    <div class="bc" style="text-align:center;margin-bottom:20px;">Variables / <span>Flashcards: Punteros</span></div>
-    <div class="flashcard-scene">
-      <div class="flashcard flipped">
-        <div class="fc-face">
-          <div class="fc-term">Recursividad</div>
-        </div>
-        <div class="fc-face fc-back">
-          <div style="font-size:11px;color:var(--aqua);letter-spacing:.04em;font-weight:600;margin-bottom:10px;">Definición</div>
-          <div class="fc-def">Técnica de programación donde una función se llama a sí misma para resolver subproblemas más pequeños del mismo tipo.</div>
+  <div class="content" style="display:flex;flex-direction:column;height:calc(100vh - 110px);">
+    <div class="bc" style="margin-bottom:12px">Variables / <span>Feynman Canvas</span></div>
+    <div class="canvas-split" style="flex:1">
+      <div class="canvas-hint-box">
+        <div class="canvas-hint-title">📌 Puntos Clave a Mencionar</div>
+        <div class="hint-item">📍 ¿Qué es una dirección de memoria?</div>
+        <div class="hint-item">📍 ¿Cómo se declara un puntero?</div>
+        <div class="hint-item">📍 ¿Qué significa el operador *?</div>
+        <div class="hint-item">📍 ¿Qué es un puntero nulo (NULL)?</div>
+        <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+          <div style="font-size:11px;color:var(--text-soft);font-weight:600;margin-bottom:8px;">🖼 RECURSO DE APOYO</div>
+          <div style="background:var(--bg3);border-radius:8px;padding:12px;font-size:12px;color:var(--text-mid);font-style:italic;">Piensa en la memoria como un gran almacén de cajas numeradas. Cada caja tiene una dirección única...</div>
         </div>
       </div>
-    </div>
-    <div class="fc-feedback">
-      <button class="fc-btn fc-no" title="No lo sabía">✗</button>
-      <button class="fc-btn fc-yes" title="¡Lo sabía!">✓</button>
-    </div>
-    <div style="font-size:12px;color:var(--text-soft);margin-top:10px;text-align:center;">
-      ¿Conocías este concepto?
+      <div class="canvas-editor">
+        <div class="canvas-mission">🎯 Misión: Explica el concepto de <b style="color:var(--lavender)">'Punteros'</b> como si se lo contaras a un niño de 10 años</div>
+        <textarea class="canvas-textarea" placeholder="Empieza a escribir tu explicación aquí... recuerda usar analogías sencillas."></textarea>
+        <div class="canvas-toolbar">
+          <div class="canvas-tools">
+            <button class="canvas-tool-btn">📎</button>
+            <button class="canvas-tool-btn">{ }</button>
+            <button class="canvas-tool-btn">🖼</button>
+          </div>
+          <button class="submit-btn" onclick="window.location='09-feedback-feynman.html'">Finalizar Explicación ✓</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
