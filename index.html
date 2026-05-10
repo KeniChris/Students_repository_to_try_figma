@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LearnTrack – Quiz Opción Múltiple</title>
+<title>LearnTrack – Flashcard (Frente)</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -355,8 +355,8 @@ svg.chart { width: 100%; height: 120px; overflow: visible; }
   <span>🎮 ESTUDIANTE</span>
   <button class="screen-btn" onclick="window.location='01-dashboard.html'">Dashboard</button>
   <button class="screen-btn" onclick="window.location='02-quiz-vf.html'">Quiz V/F</button>
-  <button class="screen-btn active" onclick="window.location='03-quiz-mc.html'">Quiz Opción Múltiple</button>
-  <button class="screen-btn" onclick="window.location='04-flashcard-front.html'">Flashcard (Frente)</button>
+  <button class="screen-btn" onclick="window.location='03-quiz-mc.html'">Quiz Opción Múltiple</button>
+  <button class="screen-btn active" onclick="window.location='04-flashcard-front.html'">Flashcard (Frente)</button>
   <button class="screen-btn" onclick="window.location='05-flashcard-back.html'">Flashcard (Reverso)</button>
   <button class="screen-btn" onclick="window.location='06-feynman.html'">Feynman Canvas</button>
   <button class="screen-btn" onclick="window.location='07-feedback-vf.html'">Feedback V/F</button>
@@ -367,42 +367,29 @@ svg.chart { width: 100%; height: 120px; overflow: visible; }
   <button class="screen-btn" onclick="window.location='12-comm-hub.html'">Comm Hub</button>
 </nav>
 
-<div class="shell screen active" id="screen-quiz-mc">
+<div class="shell screen active" id="screen-flashcard-front">
   <nav class="navbar">
     <div class="nav-logo">LearnTrack</div>
-    <div class="nav-center"><div class="streak">🔥 14</div><div class="xp-bar-wrap"><div class="xp-label">LVL 12</div><div class="xp-bar"><div class="xp-fill" style="width:70%"></div></div></div></div>
-    <div class="nav-right"><div class="bell">🔔<div class="bell-dot"></div></div><div class="hero-avatar">JP</div></div>
+    <div class="nav-center"><div class="streak">🔥 14</div></div>
+    <div class="nav-right"><div class="hero-avatar">JP</div></div>
   </nav>
-  <div class="content">
-    <div class="bc">Variables / <span>Desafío Técnico</span></div>
-    <div class="quiz-wrap">
-      <div class="progress-top">
-        <div class="prog-bar"><div class="prog-fill" style="width:40%"></div></div>
-        <div class="prog-count">4 / 10</div>
-      </div>
-      <div class="question-block">
-        <div style="font-size:11px;color:var(--lavender);font-weight:600;letter-spacing:.04em;margin-bottom:14px;">OPCIÓN MÚLTIPLE</div>
-        <div class="question-text">¿Cuál de las siguientes estructuras de datos sigue el principio LIFO (Last-In, First-Out)?</div>
-        <div style="margin-top:20px">
-          <div class="mc-option" onclick="selectMC(this)">
-            <div class="mc-letter">A</div>
-            <span>Cola (Queue)</span>
-          </div>
-          <div class="mc-option sel" onclick="selectMC(this)">
-            <div class="mc-letter">B</div>
-            <span>Pila (Stack)</span>
-          </div>
-          <div class="mc-option" onclick="selectMC(this)">
-            <div class="mc-letter">C</div>
-            <span>Lista Enlazada</span>
-          </div>
-          <div class="mc-option" onclick="selectMC(this)">
-            <div class="mc-letter">D</div>
-            <span>Árbol Binario</span>
-          </div>
+  <div class="content" style="display:flex;flex-direction:column;align-items:center;padding-top:40px;">
+    <div class="bc" style="text-align:center;margin-bottom:20px;">Variables / <span>Flashcards: Punteros</span></div>
+    <div class="progress-top" style="width:400px;">
+      <div class="prog-bar"><div class="prog-fill" style="width:30%"></div></div>
+      <div class="prog-count" style="font-size:12px;color:var(--text-soft)">Tarjetas restantes: 9</div>
+    </div>
+    <div class="flashcard-scene" onclick="window.location='05-flashcard-back.html'">
+      <div class="flashcard">
+        <div class="fc-face">
+          <div style="font-size:11px;color:var(--text-soft);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;">Concepto</div>
+          <div class="fc-term">Recursividad</div>
+          <div class="fc-hint">Haz clic para voltear la tarjeta</div>
         </div>
       </div>
-      <button class="next-btn" onclick="window.location='08-feedback-mc.html'">Siguiente Misión →</button>
+    </div>
+    <div style="font-size:12px;color:var(--text-soft);margin-top:20px;text-align:center;max-width:320px;line-height:1.6;">
+      Memoriza el concepto antes de voltear. ¿Sabes qué significa este término?
     </div>
   </div>
 </div>
